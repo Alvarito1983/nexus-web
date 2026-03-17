@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS — Container Platform</title>
+  <meta name="description" content="A lightweight, beautiful Docker management panel — built as an alternative to Portainer." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <svg width="28" height="28" viewBox="0 0 200 200" fill="none">
+          <rect x="28" y="28" width="62" height="62" rx="10" fill="#00c896"/>
+          <rect x="110" y="28" width="62" height="62" rx="10" fill="#00c896" opacity="0.55"/>
+          <rect x="28" y="110" width="62" height="62" rx="10" fill="#00c896" opacity="0.3"/>
+          <rect x="110" y="110" width="62" height="62" rx="10" fill="none" stroke="#00c896" stroke-width="6"/>
+          <path d="M125 125 L125 157 L133 157 L133 136 L149 157 L157 157 L157 125 L149 125 L149 146 L133 125 Z" fill="#00c896"/>
+        </svg>
+        <span class="nav-name">NEXUS</span>
+      </div>
+      <div class="nav-links">
+        <a href="https://github.com/Alvarito1983/NEXUS" target="_blank" class="nav-link" data-i18n="nav.github">GitHub</a>
+        <a href="https://hub.docker.com/r/afraguas1983/nexus" target="_blank" class="nav-link" data-i18n="nav.dockerhub">Docker Hub</a>
+        <button class="lang-btn" id="langBtn">ES</button>
+        <a href="https://github.com/Alvarito1983/NEXUS" target="_blank" class="nav-cta" data-i18n="nav.getstarted">Get started</a>
+      </div>
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="https://github.com/Alvarito1983/NEXUS" target="_blank" data-i18n="nav.github">GitHub</a>
+      <a href="https://hub.docker.com/r/afraguas1983/nexus" target="_blank" data-i18n="nav.dockerhub">Docker Hub</a>
+      <a href="https://github.com/Alvarito1983/NEXUS" target="_blank" data-i18n="nav.getstarted">Get started</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="badge" data-i18n="hero.badge">Open source · MIT License</div>
+      <h1 class="hero-title" data-i18n="hero.title">Docker management.<br/><span class="accent">Done right.</span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">A lightweight, beautiful panel to manage your Docker containers — built as a real alternative to Portainer. No bloat. No complexity. Just control.</p>
+      <div class="hero-actions">
+        <div class="install-box">
+          <span class="install-label" data-i18n="hero.install">Quick install</span>
+          <div class="install-cmd">
+            <code id="installCmd">docker compose up -d</code>
+            <button class="copy-btn" id="copyBtn" title="Copy">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+        <a href="https://github.com/Alvarito1983/NEXUS" target="_blank" class="btn-primary" data-i18n="hero.cta">View on GitHub →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">1</span><span class="stat-label" data-i18n="hero.stat1">command to install</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">58</span><span class="stat-label">MB</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">MIT</span><span class="stat-label" data-i18n="hero.stat3">license</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOT -->
+  <section class="screenshot-section">
+    <div class="container">
+      <div class="screen-wrap">
+        <div class="screen-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="screen-url">192.168.1.x:9090</span>
+        </div>
+        <img src="/screenshot.png" alt="NEXUS panel" class="screen-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+        <div class="screen-placeholder">
+          <div class="placeholder-inner">
+            <svg width="48" height="48" viewBox="0 0 200 200" fill="none">
+              <rect x="28" y="28" width="62" height="62" rx="10" fill="#00c896"/>
+              <rect x="110" y="28" width="62" height="62" rx="10" fill="#00c896" opacity="0.55"/>
+              <rect x="28" y="110" width="62" height="62" rx="10" fill="#00c896" opacity="0.3"/>
+              <rect x="110" y="110" width="62" height="62" rx="10" fill="none" stroke="#00c896" stroke-width="6"/>
+              <path d="M125 125 L125 157 L133 157 L133 136 L149 157 L157 157 L157 125 L149 125 L149 146 L133 125 Z" fill="#00c896"/>
+            </svg>
+            <span data-i18n="screen.placeholder">Add your screenshot here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-text">
+          <p class="section-label" data-i18n="why.label">Why NEXUS</p>
+          <h2 data-i18n="why.title">Portainer is powerful.<br/>NEXUS is <span class="accent">yours</span>.</h2>
+          <p data-i18n="why.desc">Portainer is great — for enterprises. But for homelab enthusiasts and small teams, it's overkill. NEXUS gives you 90% of what you need in 10% of the complexity.</p>
+          <div class="compare">
+            <div class="compare-row">
+              <span class="compare-item good" data-i18n="compare.1">✓ One docker compose up</span>
+              <span class="compare-item good" data-i18n="compare.2">✓ No external database</span>
+              <span class="compare-item good" data-i18n="compare.3">✓ Secure multi-host architecture</span>
+              <span class="compare-item good" data-i18n="compare.4">✓ 58 MB total size</span>
+            </div>
+          </div>
+        </div>
+        <div class="why-visual">
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title">bash</span>
+            </div>
+            <div class="terminal-body">
+              <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">curl -O https://raw.githubusercontent.com/<br/>&nbsp;&nbsp;Alvarito1983/NEXUS/main/docker-compose.yml</span></div>
+              <div class="t-line t-delay1"><span class="t-prompt">$</span> <span class="t-cmd">cp .env.example .env</span></div>
+              <div class="t-line t-delay2"><span class="t-prompt">$</span> <span class="t-cmd">docker compose up -d</span></div>
+              <div class="t-line t-delay3 t-out"><span class="t-green">✔</span> Container nexus Started</div>
+              <div class="t-line t-delay4 t-out"><span class="t-green">→</span> Open http://localhost:9090</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section">
+    <div class="container">
+      <p class="section-label" data-i18n="features.label">Features</p>
+      <h2 data-i18n="features.title">Everything you need.<br/>Nothing you don't.</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">◈</div>
+          <h3 data-i18n="f1.title">Real-time metrics</h3>
+          <p data-i18n="f1.desc">CPU & RAM per container with live sparkline history. Know what's happening at a glance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3 data-i18n="f2.title">Multi-host support</h3>
+          <p data-i18n="f2.desc">Manage multiple Docker servers from one panel. Secure agent-based architecture — the socket never leaves the host.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⌨</div>
+          <h3 data-i18n="f3.title">Integrated terminal</h3>
+          <p data-i18n="f3.desc">docker exec directly from the browser. No SSH, no extra tools needed.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🖼</div>
+          <h3 data-i18n="f4.title">Image management</h3>
+          <p data-i18n="f4.desc">List, inspect, pull from Docker Hub and remove local images. Full control over your registry.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3 data-i18n="f5.title">Crash alerts</h3>
+          <p data-i18n="f5.desc">Real-time notifications when a container stops unexpectedly. Telegram integration included.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⊞</div>
+          <h3 data-i18n="f6.title">Stack view</h3>
+          <p data-i18n="f6.desc">Containers grouped by docker-compose project. Deploy, edit and manage stacks directly from the UI.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3 data-i18n="f7.title">Multi-user</h3>
+          <p data-i18n="f7.desc">Admin and Viewer roles. Manage who can access and what they can do.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3 data-i18n="f8.title">PWA + Mobile</h3>
+          <p data-i18n="f8.desc">Installable as a desktop or mobile app. Fully responsive, works everywhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="security-section">
+    <div class="container">
+      <div class="security-inner">
+        <div class="security-badge">🔒</div>
+        <h2 data-i18n="sec.title">Security by design</h2>
+        <p data-i18n="sec.desc">Most multi-host Docker panels expose the Docker socket over TCP — that's root access over the network. NEXUS works differently: a lightweight agent runs on each remote host, wraps the socket in its own authenticated API, and only exposes the endpoints it needs. <strong>The socket never leaves the host.</strong></p>
+        <div class="security-points">
+          <div class="sec-point"><span class="t-green">✓</span> <span data-i18n="sec.1">Socket never exposed over network</span></div>
+          <div class="sec-point"><span class="t-green">✓</span> <span data-i18n="sec.2">JWT authentication with 24h expiry</span></div>
+          <div class="sec-point"><span class="t-green">✓</span> <span data-i18n="sec.3">Minimal API surface — only what's needed</span></div>
+          <div class="sec-point"><span class="t-green">✓</span> <span data-i18n="sec.4">No external database or cloud dependency</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 data-i18n="cta.title">Ready to take control?</h2>
+      <p data-i18n="cta.desc">One command. Your Docker infrastructure, under control.</p>
+      <div class="cta-cmd">
+        <code>docker compose up -d</code>
+      </div>
+      <div class="cta-actions">
+        <a href="https://github.com/Alvarito1983/NEXUS" target="_blank" class="btn-primary" data-i18n="cta.github">View on GitHub →</a>
+        <a href="https://hub.docker.com/r/afraguas1983/nexus" target="_blank" class="btn-secondary" data-i18n="cta.hub">Docker Hub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <svg width="20" height="20" viewBox="0 0 200 200" fill="none">
+            <rect x="28" y="28" width="62" height="62" rx="10" fill="#00c896"/>
+            <rect x="110" y="28" width="62" height="62" rx="10" fill="#00c896" opacity="0.55"/>
+            <rect x="28" y="110" width="62" height="62" rx="10" fill="#00c896" opacity="0.3"/>
+            <rect x="110" y="110" width="62" height="62" rx="10" fill="none" stroke="#00c896" stroke-width="6"/>
+            <path d="M125 125 L125 157 L133 157 L133 136 L149 157 L157 157 L157 125 L149 125 L149 146 L133 125 Z" fill="#00c896"/>
+          </svg>
+          <span>NEXUS</span>
+        </div>
+        <p class="footer-copy" data-i18n="footer.copy">© 2026 alvaro_lab · MIT License</p>
+        <div class="footer-links">
+          <a href="https://github.com/Alvarito1983/NEXUS" target="_blank">GitHub</a>
+          <a href="https://hub.docker.com/r/afraguas1983/nexus" target="_blank">Docker Hub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
